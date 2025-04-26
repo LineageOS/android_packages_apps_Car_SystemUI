@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2024 The Android Open Source Project
+ * Copyright (C) The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +42,8 @@ public class PassengerKeyguardPatternViewController extends
 
     private LockPatternView mLockPatternView;
     private List<LockPatternView.Cell> mPattern;
+    private byte mPatternSize;
+
 
     private final Runnable mClearPatternErrorRunnable = () -> {
         if (mLockPatternView != null) {
@@ -81,6 +84,7 @@ public class PassengerKeyguardPatternViewController extends
             public void onPatternCleared() {
                 mLockPatternView.removeCallbacks(mClearPatternErrorRunnable);
                 mPattern = null;
+                mPatternSize = 0;
             }
 
             @Override
@@ -88,9 +92,10 @@ public class PassengerKeyguardPatternViewController extends
             }
 
             @Override
-            public void onPatternDetected(List<LockPatternView.Cell> pattern) {
+            public void onPatternDetected(List<LockPatternView.Cell> pattern, byte patternSize) {
                 mLockPatternView.setEnabled(false);
                 mPattern = pattern;
+                mPatternSize = patternSize;
 
                 verifyCredential(() -> {
                     setErrorMessage(
@@ -106,7 +111,7 @@ public class PassengerKeyguardPatternViewController extends
     @Override
     protected LockscreenCredential getCurrentCredential() {
         if (mPattern != null) {
-            return LockscreenCredential.createPattern(mPattern);
+            return LockscreenCredential.createPattern(mPattern, mPatternSize);
         }
         return LockscreenCredential.createNone();
     }
