@@ -83,7 +83,7 @@ import javax.inject.Inject;
 public class HvacController implements HvacPropertySetter,
         ConfigurationController.ConfigurationListener {
     private static final String TAG = HvacController.class.getSimpleName();
-    private static final boolean DEBUG = Build.IS_ENG || Build.IS_USERDEBUG;
+    private static final boolean DEBUG = Build.isDebuggable();
     private static final int[] HVAC_PROPERTIES =
             {HVAC_FAN_SPEED, HVAC_FAN_DIRECTION, HVAC_TEMPERATURE_CURRENT, HVAC_TEMPERATURE_SET,
                     HVAC_DEFROSTER, HVAC_AC_ON, HVAC_MAX_AC_ON, HVAC_MAX_DEFROST_ON, HVAC_RECIRC_ON,
