@@ -16,6 +16,23 @@
       "message": "needs V+ vote",
       "revId": "fbf595b739e32d4b86a2fa620506a4a2bc73bcdf",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d6870bc_028d862c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 36600
+      },
+      "writtenOn": "2026-03-29T16:51:28Z",
+      "side": 1,
+      "message": "Verified that sdk_car builds and boots.",
+      "revId": "fbf595b739e32d4b86a2fa620506a4a2bc73bcdf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
