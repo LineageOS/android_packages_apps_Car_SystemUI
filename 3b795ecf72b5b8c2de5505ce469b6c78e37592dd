@@ -16,6 +16,24 @@
       "message": "This should address the call-stack from this class. There are also some features such as property simulation that have this mix-up, but I still need to find a consistent way to address them without rewriting a lot.\n\nThis one change fixes the initial exception and allows automotive images to boot. It does decrease logging in non-debuggable userdebug builds though 😅",
       "revId": "3b795ecf72b5b8c2de5505ce469b6c78e37592dd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ae7df60_cd39e0b8",
+        "filename": "src/com/android/systemui/car/hvac/HvacController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-03-29T17:00:52Z",
+      "side": 1,
+      "message": "That\u0027s a good start, let\u0027s ship something usable, then you can touch other bits as needed",
+      "parentUuid": "c20e0b52_14bcfe95",
+      "revId": "3b795ecf72b5b8c2de5505ce469b6c78e37592dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
